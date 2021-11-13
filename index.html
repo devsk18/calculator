@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url('bg.jpg');
+	    background-size: cover;
+	    background-repeat: no-repeat;
+        }
+        table{
+            background: #4d3f3d;
+            position: absolute;
+            border-color: red;
+            padding: 5px;
+        }
+        input[type="text"]{
+            width: 15.5em;
+            height: 5em;
+            font-weight: 900;
+            color:white;
+        }
+        .btn:hover{
+            background-color: red;
+        }
+        .btn{
+            width: 5em;
+            height: 5em;
+            font-weight: 900;
+            color: white;
+        }
+        .title{
+            font-family: 'Chelsea Market', cursive;
+            
+        }
+        #result{
+            color:black;
+        }
+        .calc{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2), 0 6px 40px 0 rgba(0, 0, 0, 5);
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center title">
+                <h1 class="mt-5">SIMPLE CALCULATOR</h1>
+                <h6 class="mt-4">Developed By Sam k Thampan</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center mt-5">
+                <table border="1px" class="calc">
+                    <tr>
+                        <td colspan="3"><input type="text" id="result" disabled></td>
+                        <td><input type="button" class="btn" id="clear" value="C" onclick="clr()"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" class="btn" id="btn" value="1" onclick="display('1')"></td>
+                        <td><input type="button" class="btn" id="btn" value="2" onclick="display('2')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="3" onclick="display('3')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="+" onclick="display('+')" ></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" class="btn" id="btn" value="4" onclick="display('4')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="5" onclick="display('5')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="6" onclick="display('6')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="-" onclick="display('-')" ></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" class="btn" id="btn" value="7" onclick="display('7')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="8" onclick="display('8')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="9" onclick="display('9')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="*" onclick="display('*')" ></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" class="btn" id="btn" value="." onclick="display('.')" ></td>
+                        <td><input type="button" class="btn" id="btn" value="0" onclick="display('0')" ></td>
+                        <td><input type="button" class="btn" id="calc" value="=" onclick="calc()" ></td>
+                        <td><input type="button" class="btn" id="btn" value="/" onclick="display('/')" ></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>  
 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+    function display(val){
+        document.getElementById("result").value+=val;
+    }
+    function calc(){
+        var x=document.getElementById("result").value;
+        var y=eval(x);
+        document.getElementById("result").value = y;
+    }
+    function clr() 
+         { 
+             document.getElementById("result").value = "";
+         } 
+</script>    
+</body>
+</html>
